@@ -81,9 +81,11 @@ module.exports.follow = ((req, res, next) => {
   else {
     user.network.push({ user: req.params.id, follow: true});
   }
+  setTimeout(() => {
   user.save()
-    .then(user => res.redirect(`/users`))
+    .then(user => res.json(user))
     .catch(next)
+  }, 1000)
 })
 
 module.exports.block = ((req, res, next) => {})

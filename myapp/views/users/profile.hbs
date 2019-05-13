@@ -63,7 +63,7 @@
                   <button class="btn btn-danger mr-3" type="submit">Remove</button>
                 </form>
                 <form action="/games/{{game.game.id}}/add" method="POST">
-                  <button class="btn btn-success mr-3" type="submit">Add</button>
+                  <button class="btn btn-success mr-3" type="submit" data-game-id="{{game.game.id}}" onclick="onClickAddGame(event)">Add</button>
                 </form>
               </div>
               {{/if_eq}}

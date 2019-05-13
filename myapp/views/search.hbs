@@ -10,12 +10,12 @@
                 <div class="btn mr-3" type="submit" style="background-color: dimgray">Got it!</div>
               {{else}}
                 <form action="/games/{{game.id}}/add" method="POST">
-                  <button class="btn btn-success mr-3" type="submit">Add it!</button>
+                  <button class="btn btn-success mr-3" type="submit" data-game-id="{{game.id}}" onclick="onClickAddGame(event)">Add it!</button>
                 </form>
               {{/if_loop}}
               {{#if_loopwish ../user.games game.id}}
                   <form action="/games/{{game.id}}/wish" method="POST">
-                    <button class="btn btn-primary ml-3" style="color: white" type="submit">Wish it!</button>
+                    <button class="btn btn-primary ml-3" style="color: white" type="submit" data-game-id="{{game.id}}" onclick="onClickWishGame(event)">Wish it!</button>
                   </form>
               {{/if_loopwish}}
             </div>

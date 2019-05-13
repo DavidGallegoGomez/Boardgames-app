@@ -23,7 +23,7 @@ window.onload = function() {
         legend: { display: false },
         title: {
           display: true,
-          fontSize: 36,
+          fontSize: 40,
           fontColor: "rgb(9, 85, 15)",
           text: myText
         },
@@ -37,7 +37,7 @@ window.onload = function() {
           xAxes: [{
               ticks: {
                   fontColor: "rgb(9, 85, 15)",
-                  fontSize: 24
+                  fontSize: 28
               }
           }]
       }
@@ -64,9 +64,14 @@ window.onload = function() {
             options: {
               title: {
                 display: true,
-                fontSize: 36,
+                fontSize: 40,
                 fontColor: "rgb(9, 85, 15)",
                 text: 'Users Age'
+              },
+              legend:{
+                labels:{
+                  fontSize: 40
+                }
               }
             }
         });

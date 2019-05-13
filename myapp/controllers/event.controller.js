@@ -64,7 +64,7 @@ module.exports.doCreate = (req, res, next) => {
   }
 
   event.save()
-    .then( event => res.redirect('/') )
+    .then( event => res.redirect('/events') )
     //.then( event => res.redirect(`/events/${event.id}`) )
     .catch(error => {
       if (error instanceof mongoose.Error.ValidationError) { 

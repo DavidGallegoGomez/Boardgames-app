@@ -5,7 +5,7 @@
       <div class="user-name">
         <div>{{ user.username }}</div>
         <form action="/users/{{user.id}}/follow" method="POST">
-          <button class="btn btn-primary" type="submit">Follow</button>
+          <button class="btn btn-primary" type="submit" data-user-id="{{user.id}}" onclick="onClickFollowUser(event)">Follow</button>
         </form>
         <form action="/users/{{user.id}}/block" method="POST">
           <button class="btn btn-danger ml-1 mr-1" style="color: white" type="submit">Block</button>

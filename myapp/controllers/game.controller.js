@@ -107,9 +107,11 @@ module.exports.add = (req, res, next) => {
   else {
     user.games.push({ game: req.params.id, owned: true});
   }
+  setTimeout(() => {
   user.save()
-    .then(user => res.redirect(`/`))
+    .then(user => res.json(user))
     .catch(next)
+  }, 1000)
 };
 
 module.exports.wish = (req, res, next) => {
@@ -129,9 +131,11 @@ module.exports.wish = (req, res, next) => {
   else {
     user.games.push({ game: req.params.id, wished: true});
   }
+  setTimeout(() => {
   user.save()
-    .then(user => res.redirect(`/`))
+    .then(user => res.json(user))
     .catch(next)
+  }, 1000)
 };
 
 module.exports.change = (req, res, next) => {

@@ -169,13 +169,6 @@ a {
   border-color: saddlebrown;
 }
 
-.search-wrapper {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .adding-game {
   margin-top: 25px;
   font-size: 1.2rem;
@@ -332,6 +325,7 @@ a {
 .event-detail-info-image img{
   width: 100%;
   height: auto;
+  max-height: 700px;
 }
 
 .event-detail-info-text {
@@ -411,6 +405,10 @@ a {
 .event-description-wrapper a {
   font-size: 1.3rem;
   font-weight: 700;
+}
+
+.auth-margin {
+  margin-top: 60px;
 }
 
 @media only screen and (min-width: 1001px) and (max-width: 1310px) {
@@ -530,12 +528,61 @@ a {
   padding-top: 10px;
 }
 
-.sort-games {
-  padding: 60px;
-}
-
 .user-rating-box {
   border: 3px outset orange;
   background-color: peru;
   padding: 3px;
+}
+
+
+@media only screen and (min-width: 1458px) {
+  .sort-button {
+    display: block;
+    margin: 50px auto 0;
+    width: 115px;
+  }
+  
+  .search-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .sort-games {
+    padding: 60px;
+  }
+
+  .search-module{
+    margin-right: 100px
+  }
+}
+
+@media only screen and (max-width: 1457px) {
+  .sort-games {
+    width:100%;
+    margin-top: 20px;
+  }
+  .search-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  .sort-button {
+    width: 115px;
+    display: block;
+  }
+  .search-module{
+    margin: 0 auto
+  }
+  .sort-select {
+    margin: 0 auto;
+  }
+
+  .select-input{
+    width: 25%;
+    margin: 0 auto;
+  }
+
 }

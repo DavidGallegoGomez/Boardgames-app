@@ -25,6 +25,7 @@ function addEventToMap(myMap) {
         lng: response.data.coordinates[0]
       }
       myMap.addMarker(position.lat, position.lng)
+      myMap.googleMap.setCenter(position)
       // response.data.forEach(coordinate => {
       //   myMap.addMarker(
       //     coordinate.coordinates[1],
@@ -53,6 +54,51 @@ function addUsersToMap(myMap) {
       //     coordinate.coordinates[0]
       //   )
       // })
+    })
+    .catch(console.log)
+}
+
+function onClickAddGame(e) {
+  e.preventDefault();
+
+  const gameId = e.target.dataset.gameId;
+
+  e.target.innerText = "Adding..."
+
+  axios.post(`/games/${gameId}/add`)
+    .then((response) => {
+      e.target.innerText = `Done`;
+      e.target.style = 'background-color:grey'
+    })
+    .catch(console.log)
+}
+
+function onClickWishGame(e) {
+  e.preventDefault();
+
+  const gameId = e.target.dataset.gameId;
+
+  e.target.innerText = "Adding..."
+
+  axios.post(`/games/${gameId}/wish`)
+    .then((response) => {
+      e.target.innerText = `Done`;
+      e.target.style = 'background-color:grey'
+    })
+    .catch(console.log)
+}
+
+function onClickFollowUser(e) {
+  e.preventDefault();
+
+  const userId = e.target.dataset.userId;
+
+  e.target.innerText = "Adding..."
+
+  axios.post(`/users/${userId}/follow`)
+    .then((response) => {
+      e.target.innerText = `Done`;
+      e.target.style = 'background-color:grey'
     })
     .catch(console.log)
 }
